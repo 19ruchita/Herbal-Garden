@@ -1,0 +1,14 @@
+a-scene {
+    width: 100vw;
+    height: 100vh;
+    background-color: #87CEEB; /* Sky blue background */
+  }
+  
+  a-marker {
+    cursor: pointer;
+  }
+  
+  a-box {
+    color: #FF0000; /* Red color */
+  }
+  
