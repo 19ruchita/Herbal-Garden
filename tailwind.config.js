@@ -1,43 +1,33 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "./public/index.html"
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: 'class',
   theme: {
     extend: {
+      backgroundColor: {
+        dark: {
+          primary: '#1a1a1a',
+          secondary: '#2d2d2d',
+          accent: '#3d3d3d'
+        }
+      },
+      textColor: {
+        dark: {
+          primary: '#ffffff',
+          secondary: '#e0e0e0',
+          accent: '#b0b0b0'
+        }
+      },
+
       fontFamily: {
         serif: ['Playfair Display', 'serif'],
         sans: ['Inter', 'sans-serif'],
-      },
-      colors: {
-        amber: {
-          50: '#fffbeb',
-          100: '#fef3c7',
-          500: '#f59e0b',
-          600: '#d97706',
-          700: '#b45309',
-        },
-        gray: {
-          100: '#f3f4f6',
-          400: '#9ca3af',
-          500: '#6b7280',
-          700: '#374151',
-          800: '#1f2937',
-          900: '#111827',
-        },
-      },
-      zIndex: {
-        '60': '60',
-      },
-      backdropBlur: {
-        xs: '2px',
-      },
+      }
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [],
 }
 

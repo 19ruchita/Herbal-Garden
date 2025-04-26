@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { PointerLockControls } from 'three/examples/jsm/controls/PointerLockControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import Sidebar from './sidebar'; // Ensure this path is correct
+import Sidebar from './components/Sidebar';
 
 const VirtualGarden = () => {
   const mountRef = useRef(null);

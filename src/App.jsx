@@ -1,8 +1,8 @@
 
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
 import HealthWellnessPage from './HealthWellnessPage';
-import HomePage from './Homepage';
-import VirtualGarden from './VirtualGarden';
 import AyurvedaPage from './AyurvedaInformationPage';
 import AboutPage from './About';
 import SupportPage from './Support';
@@ -12,27 +12,66 @@ import HairCarePage from './HairCare';
 import AyurvedicDietPage from './Nutrition';
 import FitnessPage from './Fitness';
 import HerbalRemediesPage from './HerbalRemedies';
-import ARScene from './ARScene';
-import HerbalMap from './HerbalMap';
+import HerbalMap from './components/HerbalMap';
+import PlantSearch from './components/PlantSearch';
 
 const App = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/health-wellness" element={<HealthWellnessPage />} />
-        <Route path="/virtual-garden" element={<VirtualGarden />} />
-        <Route path="/ayurveda-information" element={<AyurvedaPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/support" element={<SupportPage />} />
-        <Route path="/plant-catalog" element={<PlantCatalog />} /> 
-        <Route path="/ar" element={<ARScene />} />
-        <Route path="/skin-care" element={<SkinCarePage />} />
-        <Route path="/hair-care" element={<HairCarePage />} />
-        <Route path="/nutrition" element={<AyurvedicDietPage />} />
-        <Route path="/fitness" element={<FitnessPage />} />
-        <Route path="/herbal-practices" element={<HerbalRemediesPage />} />
-        <Route path="/herbal-map" element={<HerbalMap />} />
+        <Route path="/" element={
+          <Layout darkMode={darkMode} toggleDarkMode={() => setDarkMode(!darkMode)}>
+            <HealthWellnessPage darkMode={darkMode} setDarkMode={setDarkMode} />
+          </Layout>
+        } />
+        <Route path="/ayurveda-information" element={
+          <Layout darkMode={darkMode} toggleDarkMode={() => setDarkMode(!darkMode)}>
+            <AyurvedaPage darkMode={darkMode} />
+          </Layout>
+        } />
+        <Route path="/about" element={
+          <Layout darkMode={darkMode} toggleDarkMode={() => setDarkMode(!darkMode)}>
+            <AboutPage darkMode={darkMode} />
+          </Layout>
+        } />
+        <Route path="/support" element={
+          <Layout darkMode={darkMode} toggleDarkMode={() => setDarkMode(!darkMode)}>
+            <SupportPage darkMode={darkMode} />
+          </Layout>
+        } />
+        <Route path="/plant-catalog" element={
+          <Layout darkMode={darkMode} toggleDarkMode={() => setDarkMode(!darkMode)}>
+            <PlantCatalog darkMode={darkMode} />
+          </Layout>
+        } />
+        <Route path="/skin-care" element={
+          <Layout darkMode={darkMode} toggleDarkMode={() => setDarkMode(!darkMode)}>
+            <SkinCarePage darkMode={darkMode} />
+          </Layout>
+        } />
+        <Route path="/hair-care" element={
+          <Layout darkMode={darkMode} toggleDarkMode={() => setDarkMode(!darkMode)}>
+            <HairCarePage darkMode={darkMode} />
+          </Layout>
+        } />
+        <Route path="/nutrition" element={
+          <Layout darkMode={darkMode} toggleDarkMode={() => setDarkMode(!darkMode)}>
+            <AyurvedicDietPage darkMode={darkMode} />
+          </Layout>
+        } />
+        <Route path="/fitness" element={
+          <Layout darkMode={darkMode} toggleDarkMode={() => setDarkMode(!darkMode)}>
+            <FitnessPage darkMode={darkMode} />
+          </Layout>
+        } />
+        <Route path="/herbal-practices" element={
+          <Layout darkMode={darkMode} toggleDarkMode={() => setDarkMode(!darkMode)}>
+            <HerbalRemediesPage darkMode={darkMode} />
+          </Layout>
+        } />
+        <Route path="/herbal-map" element={<HerbalMap darkMode={darkMode} />} />
       </Routes>
     </Router>
   );

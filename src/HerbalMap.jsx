@@ -12,6 +12,8 @@ let DefaultIcon = L.icon({
 });
 
 L.Marker.prototype.options.icon = DefaultIcon;
+const geoUrl = "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json";
+
 
 const HerbalMap = () => {
   // Herb data for different regions
