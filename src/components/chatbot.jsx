@@ -9,7 +9,7 @@ const Chatbot = ({ darkMode }) => {
   const [input, setInput] = useState('');
   const [isOpen, setIsOpen] = useState(false);
 
-  const genAI = new GoogleGenerativeAI('AIzaSyBW-qnxEG9RB3frYJqTLwppE5dEs9lomds'); // Replace with your Gemini API key
+  const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
 
   const handleSend = async () => {
     if (!input.trim()) return;
